@@ -1,0 +1,5 @@
+# build files
+
+# ignore WS folders
+/.mcuxpressoide_packages_support/
+/.metadata/
