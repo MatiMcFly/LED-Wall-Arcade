@@ -1,5 +1,16 @@
-# build files
+# debug configurations
+*.launch
 
-# ignore WS folders
+# MCU expresso pin config file (might be needed later on) 
+*.mex
+
+# ignore WS folders and settings
 /.mcuxpressoide_packages_support/
 /.metadata/
+/LED_Wall/.settings/
+
+# ignore FreeRTOS TAD Logs
+/FreeRTOS_TAD_logs/
+
+# ignore external documentation
+/99_Resources/
