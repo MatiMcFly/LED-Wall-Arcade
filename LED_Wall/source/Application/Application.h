@@ -25,36 +25,16 @@
  */
 
 /**
- * @file    hw.h
- * @brief   Sourcefiles used for HW initializations
+ * @file    Application.h
+ * @brief   The main source code's header file
  */
+#ifndef APPLICATION_APPLICATION_H_
+#define APPLICATION_APPLICATION_H_
 
-/******************************************************************************
- *                                   INCLUDES                                 *
- ******************************************************************************/
-#include "hw.h"
-#include "fsl_port.h"
+/* ****************************************************************************
+ *                          FUNCTION DECLARATIONS                             *
+ * ****************************************************************************/
+/** the main application's startup function */
+void StartApp(void);
 
-/******************************************************************************
- *                                FUNCTION BODIES                             *
- ******************************************************************************/
-void hwInit() {
-  /* enable clock for Port C and D */
-  CLOCK_EnableClock(kCLOCK_PortC);
-  CLOCK_EnableClock(kCLOCK_PortD);
-
-  /* setup PTC2 as output (onboard LED) */
-  ONBOARD_LED_OFF();
-  PORT_SetPinMux(PORTC, 2U, kPORT_MuxAsGpio);
-  GPIOC->PDDR |= 0x4; /* set PTC2 as output */
-
-  /* setup PTD3 as output (neopixel DOUT) */
-  NEOPIXEL_L();
-  PORT_SetPinMux(PORTD, 3U, kPORT_MuxAsGpio);
-  GPIOD->PDDR |= 0x8;
-
-  ONBOARD_LED_ON();
-  ONBOARD_LED_OFF();
-  ONBOARD_LED_ON();
-  ONBOARD_LED_OFF();
-}
+#endif /* APPLICATION_APPLICATION_H_ */
